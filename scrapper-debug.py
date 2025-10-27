@@ -21,6 +21,13 @@ headers = {
         'Accept-Language': 'en-US,en;q=0.9',
         # Add other headers as needed
     }
+
+def cnn_search(query,before,after):
+    url = f"https://www.cnnindonesia.com/search?query=pilpres&result_type=latest&fromdate=14/02/2023&todate=14/02/2024&page={page}"
+
+
+
+
 def gnews_rss(query,before,after): #hanya 100 return max, execute harus in the loop dgn iterasi dan combine all links ke 1 list besar untuk di scrape
     """
     Scrape Google News RSS for a query.
@@ -87,9 +94,9 @@ def ambil_detail_berita(url): #gaiso, harus di emulate selenium dulu
 
 #print(gnews_rss("gibran","2024-02-15","2023-02-13"))
 #print(ambil_detail_berita("https://news.google.com/rss/articles/CBMirgFBVV95cUxNRzlkOHAtQk45SFBpRnNfNkVwR2tab1JYYUdHNkd3VE1rSm9MR2wyQzE5amJVVThJdkpDTjg2el9XNV9rWW0wVlVWTndFMHIwOTVBaEQtZC0zTDNxTlhyQUxQTV9WV2RxR2p2aS0ycFhpenhJd1MzNHQ1em9OclhjZXBRVGpqSUJQOHUxVnZ5S0dPRWphUkI1U2k3WVg2RUt3YVJNRGU2WWU1Q1NyOHfSAa4BQVVfeXFMT3RxYVYzTjRubC15WFl5RmNMTURZLUtwQU1CYjNlWjJsSHd0Z2NfNGxlU2pISGtENDFoRWpNaFpXWDA4b0VJejczc2toSlFicW5vU2lDcFBpOTlaTDQzdi1oS3ZsaDdnNm1fVmdqaEhLcGVmVHBleUk3OFd3S003V3pzWG5ma1d4MWk2N2ZfZUZ4X3dqbUlFaDNNUzVTaGU3ZzM1cUdwR3RYa3ZVX0l3?oc=5"))
-searchterm ="prabowo"
-#listqueries = [(searchterm,"2024-02-14","2023-11-14"),(searchterm,"2023-11-14","2023-08-14"),(searchterm,"2023-08-14","2023-05-14"),(searchterm,"2023-05-14","2023-02-14")]
-listqueries = [(searchterm,"2019-04-17","2019-01-17"),(searchterm,"2019-01-17","2018-10-17"),(searchterm,"2018-10-17","2018-07-17"),(searchterm,"2018-07-17","2018-04-17")]
+searchterm ="jokowi"
+listqueries = [(searchterm,"2024-02-14","2023-11-14"),(searchterm,"2023-11-14","2023-08-14"),(searchterm,"2023-08-14","2023-05-14"),(searchterm,"2023-05-14","2023-02-14")]
+#listqueries = [(searchterm,"2019-04-17","2019-01-17"),(searchterm,"2019-01-17","2018-10-17"),(searchterm,"2018-10-17","2018-07-17"),(searchterm,"2018-07-17","2018-04-17")]
 
 
 links = []
@@ -130,5 +137,5 @@ for y in tqdm(links):
 #print(hasil)
 
 df = pd.DataFrame(hasil)
-df.to_csv("D:\\scraping\\manualscraping\\inews_google_prabowo2019.csv", index=False)
+df.to_csv("D:\\scraping\\manualscraping\\inews_google_jokowi2024.csv", index=False)
 print(len(df), "scraped")
