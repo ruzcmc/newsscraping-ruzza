@@ -44,9 +44,9 @@ data_berita = []
 
 # Loop halaman 1 - 100
 #dikasih try jika ga ada harus break
-for page in range(1, 343):
+for page in range(770, 913):
     print(f" Scraping halaman {page}...")
-    url = f"https://www.cnnindonesia.com/search?query=muhaimin&result_type=latest&fromdate=14/02/2023&todate=14/02/2024&page={page}"
+    url = f"https://www.cnnindonesia.com/search?query=pilpres&result_type=latest&fromdate=17/04/2018&todate=17/04/2019&page={page}"
     
     while True:
         try:
@@ -111,5 +111,5 @@ driver.quit()
 # Simpan ke Excel
 df = pd.DataFrame(data_berita)
 #df.sample(n=5)
-df.to_csv("D:\\scraping\\manualscraping\\CNN_muhaimin2024.csv", index=False)
+df.to_csv("D:\\scraping\\manualscraping\\CNN_pilpres2019.csv", index=False)
 #print("✅ Selesai! Data disimpan ke 'CNN_Kurikulum Merdeka.xlsx'")
